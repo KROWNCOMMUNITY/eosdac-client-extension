@@ -1,12 +1,12 @@
 {
-    "dacName": "eosDAC",
-    "dacScope": "eosdac",
+    "dacName": "KROWN DAC",
+    "dacScope": "krowndac",
     "contracts": {
         
         "token": {
-            "name": "eosdactokens",
+            "name": "krowndactokn",
             "symbol": "EOSDAC",
-            "totalSupply": 1000000000.0000,
+            "totalSupply": 3690000000.0000,
             "decimals": 4
         },
         "system_token": {
@@ -15,8 +15,8 @@
             "decimals": 4
         },
         "custodian": {
-            "name": "daccustodian",
-            "memo": "daccustodian",
+            "name": "krowndaccust",
+            "memo": "krowndaccust",
             "enable_voting" : true
         },
         "bot":{
@@ -26,51 +26,51 @@
             "name": "eosio.msig"
         },
         "dac_msig": {
-            "name": "dacmultisigs"
+            "name": "krowndacmult"
         },        
         "wpproposal":{
-            "name": "dacproposals"
+            "name": "krowndacserv"
         },
         "escrow":{
-            "name": "eosdacescrow"
+            "name": "krowndacserv"
         }
 
     },
 
 
     "bpAccount": {
-        "name": "eosdacserver"
+        "name": "csxcommunity"
     },
     "treasuryAccount":{
-        "name": "eosdacthedac"
+        "name": "krowndacownr"
     },
 
     "authAccount": {
-        "name": "dacauthority",
+        "name": "krowndacauth",
         "controlling": [
             {
-                "name":"eosdacthedac", 
+                "name":"krowndacownr", 
                 "linkedAuths": [
                     {"contract": "eosio.token", "action": "transfer", "permission": "xfer", "label": "Transfer EOS"}
                 ]
             },
             {
-                "name":"daccustodian", 
+                "name":"krowndaccust", 
                 "linkedAuths": [
-                    {"contract": "eosdactokens", "action": "transfer", "permission": "xfer", "label": "Transfer EOSDAC"}
+                    {"contract": "krowndactokn", "action": "transfer", "permission": "xfer", "label": "Transfer EOSDAC"}
                 ]
             },
             {
-                "name":"eosdactokens", 
+                "name":"krowndactokn", 
                 "linkedAuths": [
-                    {"contract": "eosdactokens", "action": "newmemterms", "permission": "active", "label": "Update Constitution"}
+                    {"contract": "krowndactokn", "action": "newmemterms", "permission": "active", "label": "Update Constitution"}
                 ]
             },
             {
-                "name":"dacauthority", 
+                "name":"krowndacauth", 
                 "linkedAuths":[
-                    {"contract": "daccustodian", "action": "firecust", "permission": "med", "label": "Fire Custodian"},
-                    {"contract": "daccustodian", "action": "firecand", "permission": "med", "label": "Fire Candidate"}
+                    {"contract": "krowndaccust", "action": "firecust", "permission": "med", "label": "Fire Custodian"},
+                    {"contract": "krowndaccust", "action": "firecand", "permission": "med", "label": "Fire Candidate"}
                 ]
             }
         ]
@@ -80,13 +80,13 @@
         "default_eos_node": "https://proxy.eosnode.tools:443",
         "bpnodes": "https://eosdac.io/topnodes.json",
         "memberclient": "https://toolkit-api.eosdac.io",
-        "memberclient_state_api": "https://api.eosdac.io/v1/eosdac",
+        "memberclient_state_api": "http://krown.lukestokes.info:8385/v1/eosdac",
         "hyperion": "https://eos.hyperion.eosrio.io/v2/state",
         "firehose": "ws://bos.eosdac.io:1337"
     },
 
     "external":{
-        "homepage": "https://eosdac.io",
+        "homepage": "https://csx.io",
         "discord": "https://discord.io/eosdac",
         "explorer": "https://bloks.io",
         "dacexplorer": "https://explorer.eosdac.io"
