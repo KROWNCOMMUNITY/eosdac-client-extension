@@ -2,10 +2,10 @@
     "dacName": "KROWN DAC",
     "dacScope": "krowndac",
     "contracts": {
-        
+
         "token": {
             "name": "krowndactokn",
-            "symbol": "EOSDAC",
+            "symbol": "KROWN",
             "totalSupply": 3690000000.0000,
             "decimals": 4
         },
@@ -27,7 +27,7 @@
         },
         "dac_msig": {
             "name": "krowndacmult"
-        },        
+        },
         "wpproposal":{
             "name": "krowndacserv"
         },
@@ -49,25 +49,25 @@
         "name": "krowndacauth",
         "controlling": [
             {
-                "name":"krowndacownr", 
+                "name":"krowndacownr",
                 "linkedAuths": [
                     {"contract": "eosio.token", "action": "transfer", "permission": "xfer", "label": "Transfer EOS"}
                 ]
             },
-            {
-                "name":"krowndaccust", 
+           {
+                "name":"krowndaccust",
                 "linkedAuths": [
                     {"contract": "krowndactokn", "action": "transfer", "permission": "xfer", "label": "Transfer EOSDAC"}
                 ]
             },
             {
-                "name":"krowndactokn", 
+                "name":"krowndactokn",
                 "linkedAuths": [
                     {"contract": "krowndactokn", "action": "newmemterms", "permission": "active", "label": "Update Constitution"}
                 ]
             },
             {
-                "name":"krowndacauth", 
+                "name":"krowndacauth",
                 "linkedAuths":[
                     {"contract": "krowndaccust", "action": "firecust", "permission": "med", "label": "Fire Custodian"},
                     {"contract": "krowndaccust", "action": "firecand", "permission": "med", "label": "Fire Candidate"}
@@ -80,7 +80,7 @@
         "default_eos_node": "https://proxy.eosnode.tools:443",
         "bpnodes": "https://eosdac.io/topnodes.json",
         "memberclient": "https://toolkit-api.eosdac.io",
-        "memberclient_state_api": "https://krown.lukestokes.info/v1/eosdac",
+        "memberclient_state_api": "https://dac.krown.club/v1/eosdac",
         "hyperion": "https://eos.hyperion.eosrio.io/v2/state",
         "firehose": "ws://bos.eosdac.io:1337"
     },
