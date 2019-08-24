@@ -1,12 +1,20 @@
 {
     "dacName": "KROWN DAC",
-    "dacScope": "krowndac",
+    "dacScope": "krown",
+    "accounts": {
+        "treasuryAccount":{
+            "name": "krowndacownr"
+        },
+        "authAccount": {
+            "name": "krowndacauth"
+        }
+    },
     "contracts": {
-
+        
         "token": {
             "name": "krowndactokn",
             "symbol": "KROWN",
-            "totalSupply": 3690000000.0000,
+	    "totalSupply": 3690000000.0000,
             "decimals": 4
         },
         "system_token": {
@@ -20,75 +28,85 @@
             "enable_voting" : true
         },
         "bot":{
-            "name": "eosdacthebot"
+            "name": "krowndacthebot"
         },
         "system_msig": {
             "name": "eosio.msig"
         },
         "dac_msig": {
             "name": "krowndacmult"
-        },
+        },        
         "wpproposal":{
-            "name": "krowndacserv"
+            "name": "krowndacprop"
         },
         "escrow":{
-            "name": "krowndacserv"
+            "name": "eosdacescrow"
         }
 
     },
 
+    "financial_page_graphs": [
+        {
+          "account": "",
+          "contract": "eosio.token",
+          "symbol": "EOS",
+          "description":
+            "The EOS Mainnet block producer account for KrownDAC which receives Block Producer rewards."
+        },
+        {
+            "account": "krowndacownr",
+            "contract": "eosio.token",
+            "symbol": "EOS",
+            "description":
+              "The DAC owner account where DAC funds are secured and controlled by a 12-account multisig permission system of elected custodians."
+        },
+        {
+          "account": "krowndaccust",
+          "contract": "krowndactokn",
+          "symbol": "KROWN",
+          "description": "custodian contract description"
+        },
+        {
+          "account": "krownairdrop",
+          "contract": "krowndactokn",
+          "symbol": "KROWN",
+          "description":
+            "The current eosDAC service provider account which manages payroll, employment contracts, and real-world interactions on behalf of the DAC."
+        },
+        {
+          "account": "krownengaged",
+          "contract": "krowndactokn",
+          "symbol": "KROWN",
+          "description":
+            "The current eosDAC service provider account which manages payroll, employment contracts, and real-world interactions on behalf of the DAC."
+        },
+        {
+          "account": "krowndevfund",
+          "contract": "krowndactokn",
+          "symbol": "KROWN",
+          "description":
+            "The current eosDAC service provider account which manages payroll, employment contracts, and real-world interactions on behalf of the DAC."
+        },
+        {
+          "account": "krownparty11",
+          "contract": "krowndactokn",
+          "symbol": "KROWN",
+          "description":
+            "The current eosDAC service provider account which manages payroll, employment contracts, and real-world interactions on behalf of the DAC."
+        }
+	
 
-    "bpAccount": {
-        "name": "csxcommunity"
-    },
-    "treasuryAccount":{
-        "name": "krowndacownr"
-    },
-
-    "authAccount": {
-        "name": "krowndacauth",
-        "controlling": [
-            {
-                "name":"krowndacownr",
-                "linkedAuths": [
-                    {"contract": "eosio.token", "action": "transfer", "permission": "xfer", "label": "Transfer EOS"}
-                ]
-            },
-           {
-                "name":"krowndaccust",
-                "linkedAuths": [
-                    {"contract": "krowndactokn", "action": "transfer", "permission": "xfer", "label": "Transfer EOSDAC"}
-                ]
-            },
-            {
-                "name":"krowndactokn",
-                "linkedAuths": [
-                    {"contract": "krowndactokn", "action": "newmemterms", "permission": "active", "label": "Update Constitution"}
-                ]
-            },
-            {
-                "name":"krowndacauth",
-                "linkedAuths":[
-                    {"contract": "krowndaccust", "action": "firecust", "permission": "med", "label": "Fire Custodian"},
-                    {"contract": "krowndaccust", "action": "firecand", "permission": "med", "label": "Fire Candidate"}
-                ]
-            }
-        ]
-    },
+    ],
 
     "api": {
         "default_eos_node": "https://proxy.eosnode.tools:443",
         "bpnodes": "https://eosdac.io/topnodes.json",
-        "memberclient": "https://toolkit-api.eosdac.io",
         "memberclient_state_api": "https://dac.krown.club/v1/eosdac",
-        "hyperion": "https://eos.hyperion.eosrio.io/v2/state",
         "firehose": "ws://bos.eosdac.io:1337"
     },
 
     "external":{
         "homepage": "https://www.krown.club",
-        "discord": "https://t.me/krowntoken",
-        "explorer": "https://bloks.io",
-        "dacexplorer": "https://explorer.eosdac.io"
+        "explorer": "https://bloks.io"
     }
 }
