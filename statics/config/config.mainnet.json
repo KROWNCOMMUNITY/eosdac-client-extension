@@ -14,8 +14,9 @@
         "token": {
             "name": "krowndactokn",
             "symbol": "KROWN",
-	    "totalSupply": 3690000000.0000,
-            "decimals": 4
+	        "totalSupply": 3690000000.0000,
+            "decimals": 4,
+            "market_api": "https://api.coingecko.com/api/v3/coins/eosdac?localization=false"
         },
         "system_token": {
             "name": "eosio.token",
@@ -94,19 +95,23 @@
           "description":
             "The current eosDAC service provider account which manages payroll, employment contracts, and real-world interactions on behalf of the DAC."
         }
-	
+
 
     ],
 
     "api": {
         "default_eos_node": "https://proxy.eosnode.tools:443",
         "bpnodes": "https://eosdac.io/topnodes.json",
-        "memberclient_state_api": "https://dac.krown.club/v1/eosdac",
+        "memberclient": "https://toolkit-api.eosdac.io",
+        "memberclient_state_api": "https://api.eosdac.io/v1/eosdac",
+        "hyperion": "https://eos.hyperion.eosrio.io/v2/state",
         "firehose": "ws://bos.eosdac.io:1337"
     },
 
     "external":{
-        "homepage": "https://www.krown.club",
-        "explorer": "https://bloks.io"
+        "homepage": "https://www.krown.io",
+        "discord": "https://discord.io/krowndac",
+        "explorer": "https://bloks.io",
+        "dacexplorer": "https://explorer.eosdac.io"
     }
 }

@@ -4,7 +4,7 @@
       <q-item-side icon="check" color="text2" />
       <q-item-main :label="$t('default.example_page')" class="text-text1" />
     </q-item> -->
-    
+
     <!-- <q-item
       @click.native="openURL('https://www.krown.club')"
       class="cursor-pointer"
